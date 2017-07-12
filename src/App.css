@@ -1,0 +1,20 @@
+.App {
+  text-align: center;
+}
+
+.App-header {
+  background-color: #222;
+  height: 50px;
+  padding: 20px;
+  color: white;
+}
+
+.App-intro {
+  font-size: large;
+}
+.loginPanel{
+font-style: italic;
+color: brown;
+padding-top: 100px;
+padding-right: 350px;
+}
