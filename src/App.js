@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import './App.css';
-import SignUp from './signup';
 import * as firebase from 'firebase';
 import Student from './pages/Student';
 import Company from './pages/Company';
 import Admin from './pages/Admin';
 import Home from './pages/Home';
+import Login from './login';
 import{
 BrowserRouter as Router,
 Route,
@@ -17,7 +17,7 @@ super();
 this.state={
   speed:10,
 };
- }
+}
 
 // componentDidMount(){
 //   const rootRef =firebase.database().ref();
@@ -34,34 +34,31 @@ this.state={
     return (
       <div className="App">
         <div className="App-header">
-          <h2>Campus Recruitment System</h2>
+            <h2 id="titlename">Campus Recruitment System</h2>
+            <img id="headerImage" src="title.jpg" alt="logo"/>
         </div>
-       
          <Router>
            <div>
-             
               <Route exact path="/" component={Home}/>
-              <Route path="/Student" component={Student}/>
-              <Route path="/Company" component={Company}/>
-              <Route path="/Admin" component={Admin}/>
-
-              <Link to="/">Home</Link><br></br>
-              <Link to="/Student">Student</Link><br></br>
-              <Link to="/Company">Company</Link><br></br>
-              <Link to="/Admin">Admin</Link>
-           </div>
+              <Route exact path="/Student" component={Student}/>
+              <Route exact path="/Company" component={Company}/>
+              <Route exact path="/Admin" component={Admin}/>
+             
+              <Link to="/">Home</Link><br></br>   
+              <Link to="/Student">Student Login</Link><br></br>
+              <Link to="/Company">Company Login</Link><br></br>
+              <Link to="/Admin">Admin Login</Link>
+                
+              <footer>
+                   <p>Posted by: Mirza Umer</p>
+                   <p>Contact information: <a href="mailto:mirzaumersaleem@outlook.com">
+                    mirzaumersaleem@outlook.com.</a></p>
+              </footer>
+          </div>
          </Router>
-       
-        
         <div className="loginPanel">
-        
-        
-        {/*<SignUp/>*/}
-        {/*<h1>{this.state.speed}</h1>*/}
-        
-        {/*<a href="Student.js" >Student login </a><br></br>
-        <a href="Company.js" >Company login</a><br></br>
-        <a href="Admin.js" >Admin login</a>*/}
+       {/*<SignUp/>*/}
+       {/*<h1>{this.state.speed}</h1>*/}
         </div>      
       </div>
     );

@@ -1,14 +1,19 @@
 import React,{Component} from 'react';
-// import './Student.css';
-import Login from '../login';
+import '../Home.css';
+import { Button } from 'react-bootstrap';
 class Home extends Component{
 render(){
     return(
         <div>
-            <Login/>
-         <h1>Home</h1>
-            
+            <br></br><br></br><br></br><br></br><br></br>
+         <Button bsStyle="primary" bsSize="large"> Student Login</Button><br></br><br></br><br></br>
+        <Button bsStyle="primary" bsSize="large"> Student Login</Button><br></br><br></br><br></br>
+        <Button bsStyle="primary" bsSize="large"> Student Login</Button>
+          
         </div>
+         
+            
+         
     );
  }
 }

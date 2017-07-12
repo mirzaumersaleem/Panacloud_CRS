@@ -3,18 +3,38 @@
 }
 
 .App-header {
-  background-color: #222;
-  height: 50px;
-  padding: 20px;
+  background-color: dodgerblue;
+  height: 200px;
   color: white;
+  font-size: large;
 }
 
 .App-intro {
   font-size: large;
 }
-.loginPanel{
-font-style: italic;
-color: brown;
-padding-top: 100px;
-padding-right: 350px;
+
+footer{
+  margin-top: 600px;
+  background-color: dodgerblue;
+  height: 70px;
+  padding: 20px;
+  color: white;
+}
+a{
+  color: white;
+}
+#titlename{
+color: white;
+font-size: xx-large;
+padding-top: 20px;
+
+}
+#headerImage{
+  height: 130px;
+  width: 350px;
+   
+}
+#Studentlink{
+  color: blue;
+
 }
