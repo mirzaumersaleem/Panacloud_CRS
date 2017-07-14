@@ -1,12 +1,15 @@
 import React,{Component} from 'react';
 // import './Company.css';
-import Login from '../login'
+import JobPost from '../jobPost';
+import LeftPanelCompany from '../leftpanelCompany';
+import Logout from '../logout';
 class Company extends Component{
 render(){
     return(
         <div>
-             <Login/>
-         <h1>Company</h1>
+            <Logout {...this.props} />
+            <LeftPanelCompany {...this.props}/>
+            
             
         </div>
     );
