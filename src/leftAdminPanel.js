@@ -2,14 +2,15 @@ import React,{Component} from 'react';
 import * as firebase from 'firebase';
 import './LeftPanel.css';
 import JobPost from './jobPost';
-import MypostJob from './myPostJob';
 import ViewAllStudents from './viewAllStudent';
+import ViewJobs from './viewJobs';
+import ViewCompany from './viewCompany';
 import{
 BrowserRouter as Router,
 Route,
 Link
 }from 'react-router-dom';
-class LeftPanelCompany extends Component{
+class LeftPanelAdmin extends Component{
     constructor(){
         super();
         this.state={
@@ -28,43 +29,37 @@ componentDidMount(){
     });
   })
 }
-// getDetail(){
-//     this.props.history.push('/');
-// }
-// postJob(){
+getDetail(){
+    
+}
+postJob(){
 
-//     this.props.history.push('/JobPost');
-// }
-// MypostJob(){
-//     this.props.history.push('/MypostJob');
-// }
-// AllStudent(){
-//     this.props.history.push('./ViewAllStudents')
-// }/Company
+   
+}
 render(){
     return(
-        <Router>
-                  <div>
+     <Router>
+      <div>
           {this.state.user?
            <div id="left-navigation">
-           <h1>Company</h1>
            <h2>{this.state.user}</h2>
             <img src="title.jpg" alt="logo" height="250" width="250"/>
-             <p><Link className="link" to="/Company/JobPost">Post Job</Link></p>
-             <p><Link className="link" to="/Company/MypostJob">My Post Job</Link></p>
-             <p><Link className="link" to ="/Company/ViewAllStudents"> View Students</Link></p>
-
+             <p><Link className="link" to="/Admin/ViewAllStudents">View Students</Link></p>
+             <p><Link className="link" to="/Admin/ViewJobs">View Jobs</Link></p>
+           <p><Link className="link" to="/Admin/ViewCompany">View Comapny</Link></p>
            </div>
             :
                <h4>please wait. . </h4>
             }
-        <Route path="/Company/JobPost" component={JobPost}/>
-        <Route path="/Company/MypostJob" component={MypostJob}/>
-        <Route path="/Company/ViewAllStudents" component={ViewAllStudents}/>
+       
+      
+         <Route path="/Admin/ViewAllStudents" component={ViewAllStudents}/>
+         <Route path="/Admin/ViewJobs" component={ViewJobs}/>
+         <Route path='/Admin/ViewCompany' component={ViewCompany}/>
+      
        </div>
-        </Router>
-         
+       </Router>  
     );
  }
 }
-export default LeftPanelCompany;
+export default LeftPanelAdmin;

@@ -53,6 +53,7 @@ var userId=firebase.auth().currentUser.uid;
   render() {
     return (
    <div>
+    
         <MuiThemeProvider>
           <div>
           <AppBar style={{ backgroundColor: '#2196F3' }} title="Student Details"/>
@@ -89,7 +90,7 @@ var userId=firebase.auth().currentUser.uid;
            <RaisedButton label="Update" primary={true} style={style} onClick={(event) => this.UpdateStudent(event)}/>
          </div>
         </MuiThemeProvider>   
-        <ViewJObs/>   
+       
       </div>
     );
   }

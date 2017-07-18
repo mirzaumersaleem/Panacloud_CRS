@@ -1,5 +1,8 @@
 import React,{Component} from 'react';
 import * as firebase from 'firebase';
+import StudentDetail from './student-detail';
+import ViewCompany from './viewCompany';
+import ViewJobs from './viewJobs';
 import './LeftPanel.css';
 import{
 BrowserRouter as Router,
@@ -13,6 +16,7 @@ class LeftPanel extends Component{
             user:null
         }
     }
+
 componentDidMount(){
   firebase.auth().onAuthStateChanged(()=>{
 
@@ -33,23 +37,30 @@ getDetail(){
 viewjobs(){
   this.props.history.push('/ViewJobs');
 }
+viewcompanies(){
+   this.props.history.push('/ViewCompany');
+}
 render(){
     return(
+      <Router>
       <div>
           {this.state.user?
            <div id="left-navigation">
            <h1>Student</h1>
            <h2>{this.state.user}</h2>
             <img src="title.jpg" alt="logo" height="250" width="250"/>
-             <p><button onClick={this.getDetail.bind(this)}>Edit details</button></p>
-             <p><button onClick={this.viewjobs.bind(this)}>View All Jobs</button></p>
-             <p><Link to="/Student/CompanyList"><button>View companies</button></Link></p>
+             <p><Link className="link" to="/Student/StudentDetail">Edit Details</Link></p>
+             <p><Link className="link" to="/Student/ViewCompany">View Company</Link></p>
+             <p><Link className="link" to ="/Student/ViewJobs"> View Jobs</Link></p>
            </div>
             :
                <h4>please wait. . </h4>
             }
+            <Route path="/Student/StudentDetail" component={StudentDetail}/>
+            <Route path='/Student/ViewCompany' component={ViewCompany}/>
+            <Route path="/Student/ViewJobs" component={ViewJobs}/>
        </div>
-       
+       </Router>
     
             
          

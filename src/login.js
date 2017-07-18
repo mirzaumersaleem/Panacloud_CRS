@@ -7,6 +7,7 @@ import TextField from 'material-ui/TextField';
 import * as firebase from 'firebase';
 import Company from './pages/Company';
 import App from './App';
+
 import{
 BrowserRouter as Router,
 Route,
@@ -21,7 +22,6 @@ constructor(props){
   password:''
   }
  }
-
 handleClick(event) {
 firebase.auth().signInWithEmailAndPassword(this.state.username,this.state.password).then((error)=> {
   // Handle Errors here.
@@ -36,14 +36,19 @@ firebase.auth().signInWithEmailAndPassword(this.state.username,this.state.passwo
      }
     if(typeCheck==='company'){
       this.props.history.push('/Company');
-    }})
- /*<div>
-  <Link to="/Student"> </Link><br></br><br></br>
- </div>             */
+    }
+        if(typeCheck ===('')){
+      this.props.history.push('/Admin');
+    }
+ 
+})
+    
+
 }).catch((error)=>{
 var errorCode = error.code;
   var errorMessage = error.message;
   console.log("err",errorCode);
+   
 });
   
    

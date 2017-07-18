@@ -1,12 +1,14 @@
 import React,{Component} from 'react';
 // import './Admin.css';
-import Login from '../login'
+import LeftPanelAdmin from '../leftAdminPanel';
+import Logout from '../logout'
 class Admin extends Component{
 render(){
     return(
         <div>
-            <Login/>
-         <h1>Admin</h1>
+          <Logout {...this.props}/>
+         <LeftPanelAdmin {...this.props}/>
+      
             
         </div>
     );

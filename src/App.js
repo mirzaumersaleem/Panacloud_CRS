@@ -12,6 +12,9 @@ import SignUp from './signup';
 import ViewJobs from './viewJobs';
 import JobPost from './jobPost';
 import StudentDetail from './student-detail';
+import ViewCompany from './viewCompany';
+import MypostJob from './myPostJob';
+import ViewAllStudents from './viewAllStudent';
 import{
 BrowserRouter as Router,
 Route,
@@ -24,18 +27,6 @@ this.state={
   speed:10,
 };
 }
-
-// componentDidMount(){
-//   const rootRef =firebase.database().ref();
-//   const speedRef =rootRef.child('speed');
-//   speedRef.on('value',snap => {
-   
-//    this.setState({
-//    speed:snap.val()
-//    });
-
-//   });
-// }
 
   render() {
     return (
@@ -54,9 +45,12 @@ this.state={
               <Route path="/Admin" component={Admin}/>
               <Route path="/Login" component={Login}/>
               <Route path="/SignUp" component={SignUp}/>
-              <Route path="/StudentDetail" component={StudentDetail}/>
-              <Route path="/ViewJobs" component={ViewJobs}/>
-              <Route path="/JobPost" component={JobPost}/>
+              {/*<Route path="/StudentDetail" component={StudentDetail}/>*/}
+              {/*<Route path="/ViewJobs" component={ViewJobs}/>*/}
+              {/*<Route path="/JobPost" component={JobPost}/>*/}
+              {/*<Route path='/ViewCompany' component={ViewCompany}/>*/}
+              {/*<Route path='/MypostJob' component={MypostJob}/>*/}
+              {/*<Route path='/ViewAllStudents' component={ViewAllStudents}/>*/}
               
 {/*
               <Link to="/">Home</Link><br></br> <br></br><br></br>  

@@ -19,7 +19,7 @@ class JobPost extends Component {
 
 PostNewJob(){
     var uid = firebase.auth().currentUser.uid;
-      firebase.database().ref('Job/'+ uid).push({
+      firebase.database().ref('Job/').push({
       JobTitle:this.state.title,
       Salary :this.state.salary,
       Description:this.state.description,
